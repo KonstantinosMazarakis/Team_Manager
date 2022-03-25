@@ -32,6 +32,10 @@ const Players = () =>{
 
 
     const deleteProduct = (id) =>{
+        const confirmBox = window.confirm(
+            "Do you really want to delete this Player?"
+          )
+          if (confirmBox === true) {
         axios.delete(`http://localhost:8000/api/teamManager/${id}`)
                 .then(res=>{
                     let filteredList = report.filter((playersObj)=>{
@@ -42,7 +46,7 @@ const Players = () =>{
                 .catch(err=>{
                     console.log("error 404... no API found." + err)
                 })
-        
+          }
     }
 
 
