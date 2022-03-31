@@ -87,7 +87,7 @@ console.log(g1Bold)
 
     return <>
         <h1>Player Status - Game {game1?"1":game2?"2":game3?"3":null}</h1>
-        <p><Link onClick={G1} className={g1Bold}>Game 1</Link> | <Link onClick={G2} className={g2Bold}>Game 2</Link> | <Link onClick={G3} className={g3Bold}>Game 3</Link></p>
+        <p><button onClick={G1} className={g1Bold}>Game 1</button> | <button onClick={G2} className={g2Bold}>Game 2</button> | <button onClick={G3} className={g3Bold}>Game 3</button></p>
         <table className="table table-striped w-auto mx-auto">
             <thead>
                 <tr>
@@ -98,8 +98,8 @@ console.log(g1Bold)
             <tbody>
                 {
                     report.map((playersObj) => {
-                        return <>
-                            {game1 ? playersObj[theGame] == "Undecided"?<tr key={playersObj._id}>
+                        return <React.Fragment key={playersObj._id}>
+                            {game1 ? playersObj[theGame] == "Undecided"?<tr>
                                 {console.log("yo")}
                                 <td >{playersObj.name}</td>
                                 <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-light me-4'}>Playing</button>
@@ -155,7 +155,7 @@ console.log(g1Bold)
                             <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-success me-4'}>Playing</button>
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Not Playing") }} className={'btn btn-light me-4'}>Not Playing</button >
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Undecided") }} className={'btn btn-light me-4'}>Undecided</button></td>
-                        </tr>:null:null}</>
+                        </tr>:null:null}</React.Fragment>
                     })
                 }
             </tbody>
