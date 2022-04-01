@@ -67,8 +67,8 @@ const Players = () =>{
         {
             report.map((playersObj)=>{
                 return<tr key={playersObj._id}>
-                    <td>{playersObj.name}</td>
-                    <td>{playersObj.position}</td>
+                    <td className='fw-bold'>{playersObj.name}</td>
+                    <td className='fw-bold'>{playersObj.position}</td>
                     <td><button onClick={()=>{deleteProduct(playersObj._id)}} className='btn btn-danger'>Delete</button></td>
                 </tr>
             })

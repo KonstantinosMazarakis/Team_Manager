@@ -10,9 +10,9 @@ const Game = () => {
     let [game3, setGame3] = useState(false)
     let [theGame, setTheGame] = useState("gameOneStatus")
     let [reRender,setreRender] = useState(false)
-    let [g1Bold,setG1Bold] = useState("fw-bold")
-    let [g2Bold,setG2Bold] = useState("")
-    let [g3Bold,setG3Bold] = useState("")
+    let [g1Bold,setG1Bold] = useState("fw-bold btn btn-info")
+    let [g2Bold,setG2Bold] = useState("btn btn-info")
+    let [g3Bold,setG3Bold] = useState("btn btn-info")
 
 console.log(g1Bold)
     const G1 = () => {
@@ -20,9 +20,9 @@ console.log(g1Bold)
         setGame2(false)
         setGame3(false)
         setTheGame("gameOneStatus")
-        setG1Bold("fw-bold")
-        setG2Bold("")
-        setG3Bold("")
+        setG1Bold("fw-bold btn btn-info")
+        setG2Bold("btn btn-info")
+        setG3Bold("btn btn-info")
     }
 
     const G2 = () => {
@@ -30,9 +30,9 @@ console.log(g1Bold)
         setGame2(true)
         setGame3(false)
         setTheGame("gameTwoStatus")
-        setG1Bold("")
-        setG2Bold("fw-bold")
-        setG3Bold("")
+        setG1Bold("btn btn-info")
+        setG2Bold("fw-bold btn btn-info")
+        setG3Bold("btn btn-info")
     }
 
     const G3 = () => {
@@ -40,9 +40,9 @@ console.log(g1Bold)
         setGame2(false)
         setGame3(true)
         setTheGame("gameThreeStatus")
-        setG1Bold("")
-        setG2Bold("")
-        setG3Bold("fw-bold")
+        setG1Bold("btn btn-info")
+        setG2Bold("btn btn-info")
+        setG3Bold("fw-bold btn btn-info")
     }
 
 
@@ -101,17 +101,17 @@ console.log(g1Bold)
                         return <React.Fragment key={playersObj._id}>
                             {game1 ? playersObj[theGame] == "Undecided"?<tr>
                                 {console.log("yo")}
-                                <td >{playersObj.name}</td>
+                                <td className='fw-bold'>{playersObj.name}</td>
                                 <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-light me-4'}>Playing</button>
                                     <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Not Playing") }} className={'btn btn-light me-4'}>Not Playing</button >
                                     <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Undecided") }} className={'btn btn-warning me-4'}>Undecided</button></td>
                             </tr>:playersObj[theGame] == "Not Playing"?<tr key={playersObj._id}>
-                                <td>{playersObj.name}</td>
+                                <td className='fw-bold'>{playersObj.name}</td>
                                 <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-light me-4'}>Playing</button>
                                     <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Not Playing") }} className={'btn btn-danger me-4'}>Not Playing</button >
                                     <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Undecided") }} className={'btn btn-light me-4'}>Undecided</button></td>
                             </tr>:playersObj[theGame] == "Playing"?<tr key={playersObj._id}>
-                                <td>{playersObj.name}</td>
+                                <td className='fw-bold'>{playersObj.name}</td>
                                 <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-success me-4'}>Playing</button>
                                     <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Not Playing") }} className={'btn btn-light me-4'}>Not Playing</button >
                                     <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Undecided") }} className={'btn btn-light me-4'}>Undecided</button></td>
@@ -121,17 +121,17 @@ console.log(g1Bold)
                             
                             : game2 ? playersObj[theGame] == "Undecided"?<tr key={playersObj._id}>
                                 {console.log("yoyo")}
-                            <td>{playersObj.name}</td>
+                            <td className='fw-bold'>{playersObj.name}</td>
                             <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-light me-4'}>Playing</button>
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Not Playing") }} className={'btn btn-light me-4'}>Not Playing</button >
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Undecided") }} className={'btn btn-warning me-4'}>Undecided</button></td>
                         </tr>:playersObj[theGame] == "Not Playing"?<tr key={playersObj._id}>
-                            <td>{playersObj.name}</td>
+                            <td className='fw-bold'>{playersObj.name}</td>
                             <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-light me-4'}>Playing</button>
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Not Playing") }} className={'btn btn-danger me-4'}>Not Playing</button >
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Undecided") }} className={'btn btn-light me-4'}>Undecided</button></td>
                         </tr>:playersObj[theGame] == "Playing"?<tr key={playersObj._id}>
-                            <td>{playersObj.name}</td>
+                            <td className='fw-bold'>{playersObj.name}</td>
                             <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-success me-4'}>Playing</button>
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Not Playing") }} className={'btn btn-light me-4'}>Not Playing</button >
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Undecided") }} className={'btn btn-light me-4'}>Undecided</button></td>
@@ -141,17 +141,17 @@ console.log(g1Bold)
                             
                             : game3 ? playersObj[theGame] == "Undecided"?<tr key={playersObj._id}>
                                 {console.log("yoyoyo")}
-                            <td>{playersObj.name}</td>
+                            <td className='fw-bold'>{playersObj.name}</td>
                             <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-light me-4'}>Playing</button>
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Not Playing") }} className={'btn btn-light me-4'}>Not Playing</button >
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Undecided") }} className={'btn btn-warning me-4'}>Undecided</button></td>
                         </tr>:playersObj[theGame] == "Not Playing"?<tr key={playersObj._id}>
-                            <td>{playersObj.name}</td>
+                            <td className='fw-bold'>{playersObj.name}</td>
                             <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-light me-4'}>Playing</button>
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Not Playing") }} className={'btn btn-danger me-4'}>Not Playing</button >
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Undecided") }} className={'btn btn-light me-4'}>Undecided</button></td>
                         </tr>:playersObj[theGame] == "Playing"?<tr key={playersObj._id}>
-                            <td>{playersObj.name}</td>
+                            <td className='fw-bold'>{playersObj.name}</td>
                             <td><button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Playing") }} className={'btn btn-success me-4'}>Playing</button>
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Not Playing") }} className={'btn btn-light me-4'}>Not Playing</button >
                                 <button onClick={() => { DatabaseCall(playersObj._id, playersObj.name, playersObj.position, theGame, "Undecided") }} className={'btn btn-light me-4'}>Undecided</button></td>

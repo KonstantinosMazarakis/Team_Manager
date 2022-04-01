@@ -30,7 +30,9 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="App">
+    <div className="App main container">
+      <div className='glass container'>
+        <h1 className='big'>Three Game Series</h1>
     <Link onClick={playersBold} className={cssbold} to="/">Manage Players </Link> |
     <Link onClick={playersBoldStatus} className={cssboldStatus} to="/status/game/1"> Manage Players Status</Link>
     <Switch>
@@ -44,6 +46,7 @@ function App() {
         <Game></Game>
       </Route>
       </Switch>
+      </div>
     </div>
     </BrowserRouter>
 

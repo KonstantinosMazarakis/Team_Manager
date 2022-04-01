@@ -37,13 +37,13 @@ const AddPlayers = () =>{
     <Link to="/">List </Link>|
     <Link to="/addPlayer" className="fw-bold"> Add Player</Link>
     </div>
-    <div className='w-25 m-auto'>
+    <div className=' m-auto'>
         <form onSubmit={AddAuthor}>
         <h2>Add Player</h2>
         <p className='text-danger'>{validations.name?.message}</p>
         <div className='m-2'>
         <label className="form-label">Player Name: </label>
-        <input className="form-control" type="text" onChange={(e)=>{setName(e.target.value)}} />
+        <input className="form-control area" type="text" onChange={(e)=>{setName(e.target.value)}} />
         </div>
         <div className='m-2 mb-4'>
         <label className="form-label">Preferred Position: </label>
