@@ -4,6 +4,10 @@
 
 This is a Full stack web REACT - MERN application who the user can add, delete and take attendance for players to a 3 game series.
 
+## Languages/Frameworks
+
+HTML, CSS, JavaScript, REACT, MongoDB, Bootstrap, Express, Axios
+
 ## Images 
 
 <img src="https://www.kmazarakis.com/images/projects/three_game_series/1.PNG" width="1200" height="500">
